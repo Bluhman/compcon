@@ -104,8 +104,16 @@ class Bonus {
     let valStr = bonus.Value
     const ll = source.FeatureController.getRootProperty('Level')?.toString() || '0'
     const grit = source.FeatureController.getRootProperty('Grit')?.toString() || '0'
+    const hull = source.FeatureController.getRootProperty('Hull')?.toString() || '0'
+    const agility = source.FeatureController.getRootProperty('Agility')?.toString() || '0'
+    const systems = source.FeatureController.getRootProperty('Systems')?.toString() || '0'
+    const engineering = source.FeatureController.getRootProperty('Engineering')?.toString() || '0'
     valStr = valStr.replace(/{ll}/g, ll)
     valStr = valStr.replace(/{grit}/g, grit)
+    valStr = valStr.replace(/{hull}/g, hull)
+    valStr = valStr.replace(/{agil}/g, agility)
+    valStr = valStr.replace(/{syst}/g, systems)
+    valStr = valStr.replace(/{engr}/g, engineering)
     valStr = valStr.replace(/[^-()\d/*+.]/g, '')
     return Math.ceil(eval(valStr))
   }
